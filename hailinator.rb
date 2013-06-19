@@ -9,9 +9,21 @@ end
 
 Twitter.home_timeline
 
-hail_results = []
+# results_array = []
 
-Twitter.search("#hail, #damage", :result_type => "recent").results.map do |status|
-  "#{status.from_user}: #{status.text}"
-  hail_results << status
+Twitter.search("#hail #damage").results.map do |status|
+	puts "#{status.from_user}: #{status.text}"
+
 end
+
+# result_array.each do |result|
+# 	puts result 
+# end
+
+
+# require 'csv'
+# CSV.open("users_with_hail_damage.csv", "w") do |csv|
+#   csv << ["row", "of", "CSV", "data"]
+#   csv << ["another", "row"]
+#   # ...
+# end
