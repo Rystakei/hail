@@ -1,10 +1,10 @@
 require "twitter"
 
 Twitter.configure do |config|
-  config.consumer_key = "Pwd2CVvJdeavPPhsbWA"
-  config.consumer_secret = "ZAC2U9iY6anfcabdOsTS9EDdLXSp5Zwq5GGdQQ"
-  config.oauth_token = "385680001-v4Ru9tnVPmjLuZKkELQRtSm7yirX2EzHt5pg7nXA"
-  config.oauth_token_secret = "3t0tEKClCyARFd06NxaCt7YQPHHCWV1zH18Hk6aVE"
+  config.consumer_key = "1pHoFSwmmCqu5KcVkFyydw"
+  config.consumer_secret = "ulzqPqRz7H6XctZPStBTK4xFNEi3YWqOaaPWeTm8dS0"
+  config.oauth_token = "385680001-wBA3FZTqcIXhny14zusBwHa9sXj9sQBjZjAuiKse"
+  config.oauth_token_secret = "5yuHvNIyPf9GMDutJvtL47oDMJ5sswaDFxQT7Re1ws"
 end
 
 
@@ -23,10 +23,11 @@ CSV.open("users_with_hail_damage.csv", "w") do |csv|
 
  end
 
-#  Twitter.search("#austin #events").results.map do |status|
-# 			puts "#{status.from_user}: #{status.text}"
-# 			puts status.inspect
 
-# 			Twitter.favorite(status.id)
-# 			# Twitter.follow(status.user.screen_name)
-# end
+ Twitter.search("#austin #events").results.map do |status|
+			puts "#{status.from_user}: #{status.text}"
+			puts status.inspect
+
+			Twitter.favorite(status.id)
+			# Twitter.follow(status.user.screen_name)
+end
