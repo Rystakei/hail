@@ -7,6 +7,7 @@ Twitter.configure do |config|
   config.oauth_token_secret = "3t0tEKClCyARFd06NxaCt7YQPHHCWV1zH18Hk6aVE"
 end
 
+
 require 'csv'
 
 CSV.open("users_with_hail_damage.csv", "w") do |csv|
@@ -17,5 +18,15 @@ CSV.open("users_with_hail_damage.csv", "w") do |csv|
 			puts status.inspect
 		
 		csv <<  [status.user.screen_name, status.text, "https://twitter.com/#{status.user.screen_name}/statuses/#{status.id}"]
+
 		end
+
  end
+
+#  Twitter.search("#austin #events").results.map do |status|
+# 			puts "#{status.from_user}: #{status.text}"
+# 			puts status.inspect
+
+# 			Twitter.favorite(status.id)
+# 			# Twitter.follow(status.user.screen_name)
+# end
